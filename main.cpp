@@ -6,9 +6,12 @@
 #define ROWS 40
 #define FPS 10
 
+extern short sDirection;
+
 void timer_callback(int);
 void display_callback();
 void reshape_callback(int,int);
+void keyboard_callback(int,int,int);
 
 void init()
 {
@@ -25,21 +28,17 @@ int main(int argc,char **argv)
     glutReshapeFunc(reshape_callback);
     glutDisplayFunc(display_callback);
     glutTimerFunc(0,timer_callback,0);
+    glutSpecialFunc(keyboard_callback);
     init();
     glutMainLoop();
     return 0;
 }
-int index=0;
+
 void display_callback()
 {
     glClear(GL_COLOR_BUFFER_BIT);
     drawGrid();
-    glRectd(index,20,index+2,22);
-    index++;
-    if(index>40)
-    {
-        index=0;
-    }
+    drawSnake();
     glutSwapBuffers();
 }
 
@@ -59,6 +58,28 @@ void timer_callback(int)
     glutTimerFunc(1000/FPS,timer_callback,0);
 }
 
+void keyboard_callback(int key,int,int)
+{
+    switch(key)
+    {
+        case GLUT_KEY_UP:
+            if(sDirection!=DOWN)
+                sDirection=UP;
+            break;
+        case GLUT_KEY_DOWN:
+            if(sDirection!=UP)
+                sDirection=DOWN;
+            break;
+        case GLUT_KEY_RIGHT:
+            if(sDirection!=LEFT)
+                sDirection=RIGHT;
+            break;
+        case GLUT_KEY_LEFT:
+            if(sDirection!=RIGHT)
+                sDirection=LEFT;
+            break;
 
+    }
+}
 
 

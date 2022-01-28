@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1643347673 source:c:\users\githu\onedrive\documents\snake\main.cpp
+1643350565 source:c:\users\githu\onedrive\documents\snake\main.cpp
 	<GL/gl.h>
 	<GL/glut.h>
 	"coordinates.h"
@@ -228,9 +228,9 @@
 	<stddef.h>
 	<GL/gl.h>
 
-1643343791 c:\users\githu\onedrive\documents\snake\coordinates.h
+1643349876 c:\users\githu\onedrive\documents\snake\coordinates.h
 
-1643346855 source:c:\users\githu\onedrive\documents\snake\coordinates.cpp
+1643350565 source:c:\users\githu\onedrive\documents\snake\coordinates.cpp
 	<GL/gl.h>
 	<GL/glut.h>
 	"coordinates.h"

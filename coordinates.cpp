@@ -4,6 +4,9 @@
 
 int gridX,gridY;
 
+int posX=20,posY=20;
+short sDirection = RIGHT;
+
 void initGrid(int x, int y)
 {
     gridX=x;
@@ -31,7 +34,7 @@ void unit(int x, int y)
     else
     {
     glLineWidth(1.0);
-    glColor3f(0.0,0.0,0.0);
+    glColor3f(1.0,1.0,1.0);
     }
 
 
@@ -41,4 +44,22 @@ void unit(int x, int y)
         glVertex2f(x+1,y+1);
         glVertex2f(x,y+1);
     glEnd();
+}
+
+void drawSnake()
+{
+
+    if(sDirection==UP)
+        posY++;
+    else if(sDirection==DOWN)
+        posY--;
+    else if(sDirection==RIGHT)
+        posX++;
+    else if(sDirection==LEFT)
+        posX--;
+
+    glRectd(posX,posY,posX+1,posY+1);
+
+
+
 }
