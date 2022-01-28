@@ -4,7 +4,7 @@
 
 int gridX,gridY;
 
-void initGrid(int x ,int y)
+void initGrid(int x, int y)
 {
     gridX=x;
     gridY=y;
@@ -38,7 +38,7 @@ void unit(int x, int y)
     glBegin(GL_LINE_LOOP);
         glVertex2f(x,y);
         glVertex2f(x+1,y);
-        glVertex2f(x+1,x+1);
+        glVertex2f(x+1,y+1);
         glVertex2f(x,y+1);
     glEnd();
 }
